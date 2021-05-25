@@ -9,7 +9,7 @@ plt.rcParams['figure.figsize'] = (20,10)
 plt.style.use('fivethirtyeight')
 
 def get_historical_data(symbol, start_date):
-    api_key = 'ace6a59ff46446659af4e691fab88e22'
+    api_key = 'YOUR API KEY'
     api_url = f'https://api.twelvedata.com/time_series?symbol={symbol}&interval=1day&outputsize=5000&apikey={api_key}'
     raw_df = requests.get(api_url).json()
     df = pd.DataFrame(raw_df['values']).iloc[::-1].set_index('datetime').astype(float)
